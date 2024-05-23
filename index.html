@@ -10,38 +10,42 @@
     <title>Wallpaper</title>
 </head>
 <body>
+    <!--div class="horizontal"></div>
+    <div class="vertical"></div-->
     <div>
         <img src="perfil.PNG" alt="" class="foto_perfil">
         <ul class="links">
-            <li>
-                <a href="https://github.com/Jsp0w" target="blank">
+            <li class="menu">
+                <a href="">
                     <ion-icon name="logo-github" class="icon"></ion-icon>
                     <p>github</p>
                 </a>
             </li>
-            <li>
+            <li class="menu">
                 <a href="">
                     <ion-icon name="logo-linkedin" class="icon"></ion-icon>
                     <p>linkedin</p>
                 </a>
             </li>
-            <li onclick="darkmode()">
-                    <ion-icon name="moon" class="icon" id="escuro"></ion-icon>
-                    <ion-icon name="sunny" class="icon darkmode_btn" id="claro"></ion-icon>
-                    <p>darkmode</p>
+            <li class="menu" onclick="darkmode()">
+                <ion-icon name="moon" class="icon escuro"></ion-icon>
+                <ion-icon name="sunny" class="icon darkmode_btn claro"></ion-icon>
+                <p>darkmode</p>
             </li>
-            <li class="item_menu" onclick="rgb()">
+            <li class="menu" onclick="rgb()">
                 <ion-icon name="help" class="icon"></ion-icon>
                 <p>rgb</p>
             </li>
         </ul>
     </div>
+    <div>
+        <h1>João Paulo</h1>
+        <p></p>
+    </div>
     <script>
-        icone = document.getElementById('claro')
-        console.log(icone)
         function darkmode (){
-            icone = document.getElementById('claro');
-            icone2 = document.getElementById('escuro');
+            icone = document.querySelector('ion-icon.claro');
+            icone2 = document.querySelector('ion-icon.escuro');
             elemento = document.querySelector('html');
             elemento.classList.toggle('darkmode');
             icone.classList.toggle('darkmode_btn');

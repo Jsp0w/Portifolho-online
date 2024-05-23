@@ -45,31 +45,80 @@ body{
 body.rgb{
     background-image: linear-gradient(var(--fundo) 97%,#0000);
 }
+.horizontal{
+    position: fixed;
+    background-color: #f00;
+    width: 100vw;
+    height: 3vw;
+    top: 0;
+}
+.vertical{
+    position: fixed;
+    background-color: #f00;
+    width: 3vw;
+    height: 100vh;
+    left: 0;
+}
+.horizontal::after{
+    content: '';
+    position: fixed;
+    background-color: #f00;
+    width: 100vw;
+    height: 3vw;
+    bottom: 0;
+}
+.vertical::after{
+    content: '';
+    position:fixed;
+    background-color: #f00;
+    width: 3vw;
+    height: 100vh;
+    right: 0;
+}
 /*body::-webkit-scrollbar{
     width: 0;
     height: 0;
 }*/
-.links, .links>li, .links>li>a{
+.foto_perfil{
+    height: 15rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0.5rem var(--sombra_menu);
+}
+.links, .menu, .menu>a{
     display: flex;
     justify-content: center;
     align-items: start;
 }
 .links{
+    width: auto;
     height: 13rem;
     margin-top: 1.5em;
     list-style: none;
     flex-direction: column;
     justify-content: space-between;
+    padding-left: 1rem;
+}
+.menu{
+    width: auto;
+    height: 3rem;
+    align-items: center;
+}
+.menu:hover{
+    cursor:pointer;
+}
+a{
+    align-items: center;
 }
 .icon, a, p{
-    height: 2.5rem;
     font-size: 2rem;
     text-decoration: none;
     color: var(--cor_menu);
+    transition: 1s;
 }
 .icon{
     transition: 1s;
     width: 2.5rem;
+    height: 2.5rem;
 }
 .darkmode_btn{
     transform: rotate(180deg);
@@ -77,8 +126,13 @@ body.rgb{
     width: 0;
 
 }
-.foto_perfil{
-    height: 15rem;
-    border-radius: 50%;
-    box-shadow: 0 0 0.5rem var(--sombra_menu);
+.menu:hover p{
+    font-size: 2.25rem;
+    text-shadow: 0 0 1rem #fff;
+    transition: 1s;
+}
+.menu:hover .icon:not(.darkmode_btn){
+    width: 3rem;
+    filter: drop-shadow(0 0 1rem #fff);
+    transition: 1s;
 }
