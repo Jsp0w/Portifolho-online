@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt/br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,46 +10,50 @@
     <title>Wallpaper</title>
 </head>
 <body>
-    <div>
+    <!--div class="horizontal"></div>
+    <div class="vertical"></div-->
+    <div class="coluna1">
         <img src="perfil.PNG" alt="" class="foto_perfil">
         <ul class="links">
-            <li>
-                <a href="https://github.com/Jsp0w" target="blank">
+            <li class="menu">
+                <a href="">
                     <ion-icon name="logo-github" class="icon"></ion-icon>
                     <p>github</p>
                 </a>
             </li>
-            <li>
+            <li class="menu">
                 <a href="">
                     <ion-icon name="logo-linkedin" class="icon"></ion-icon>
                     <p>linkedin</p>
                 </a>
             </li>
-            <li onclick="darkmode()">
-                    <ion-icon name="moon" class="icon" id="escuro"></ion-icon>
-                    <ion-icon name="sunny" class="icon darkmode_btn" id="claro"></ion-icon>
-                    <p>darkmode</p>
+            <li class="menu">
+                <ion-icon name="at-circle" class="icon"></ion-icon>
+                <p class="email">meueamil@gmail.com</p>
             </li>
-            <li class="item_menu" onclick="rgb()">
-                <ion-icon name="help" class="icon"></ion-icon>
-                <p>rgb</p>
+            <li class="menu">
+                <ion-icon name="call" class="icon"></ion-icon>
+                <p class="telefone">+55(22)99999-9999</p>
+            </li>
+            <li class="menu" onclick="darkmode()">
+                <ion-icon name="moon" class="icon escuro"></ion-icon>
+                <ion-icon name="sunny" class="icon darkmode_btn claro"></ion-icon>
+                <p>darkmode</p>
             </li>
         </ul>
     </div>
+    <div class="coluna2">
+        <h1>João Paulo</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt laboriosam rem voluptatem impedit eius tempore minima eos autem blanditiis, et illo voluptas praesentium delectus. Harum illum obcaecati cumque expedita neque.</p>
+    </div>
     <script>
-        icone = document.getElementById('claro')
-        console.log(icone)
         function darkmode (){
-            icone = document.getElementById('claro');
-            icone2 = document.getElementById('escuro');
+            icone = document.querySelector('ion-icon.claro');
+            icone2 = document.querySelector('ion-icon.escuro');
             elemento = document.querySelector('html');
             elemento.classList.toggle('darkmode');
             icone.classList.toggle('darkmode_btn');
             icone2.classList.toggle('darkmode_btn');
-        }
-        function rgb (){
-            elemento = document.querySelector('body');
-            elemento.classList.toggle('rgb');
         }
     </script>
 </body>
