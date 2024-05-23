@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt/br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Wallpaper</title>
+</head>
+<body>
+    <div>
+        <img src="perfil.PNG" alt="" class="foto_perfil">
+        <ul class="links">
+            <li>
+                <a href="https://github.com/Jsp0w" target="blank">
+                    <ion-icon name="logo-github" class="icon"></ion-icon>
+                    <p>github</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <ion-icon name="logo-linkedin" class="icon"></ion-icon>
+                    <p>linkedin</p>
+                </a>
+            </li>
+            <li onclick="darkmode()">
+                    <ion-icon name="moon" class="icon" id="escuro"></ion-icon>
+                    <ion-icon name="sunny" class="icon darkmode_btn" id="claro"></ion-icon>
+                    <p>darkmode</p>
+            </li>
+            <li class="item_menu" onclick="rgb()">
+                <ion-icon name="help" class="icon"></ion-icon>
+                <p>rgb</p>
+            </li>
+        </ul>
+    </div>
+    <script>
+        icone = document.getElementById('claro')
+        console.log(icone)
+        function darkmode (){
+            icone = document.getElementById('claro');
+            icone2 = document.getElementById('escuro');
+            elemento = document.querySelector('html');
+            elemento.classList.toggle('darkmode');
+            icone.classList.toggle('darkmode_btn');
+            icone2.classList.toggle('darkmode_btn');
+        }
+        function rgb (){
+            elemento = document.querySelector('body');
+            elemento.classList.toggle('rgb');
+        }
+    </script>
+</body>
+</html>
