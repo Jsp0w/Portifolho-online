@@ -1,10 +1,11 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     border: 0px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
-:root{
+
+:root {
     height: 100vh;
     width: 100vw;
     color: #e0e0e0;
@@ -12,12 +13,15 @@
     --cor_menu: #e0e0e0;
     --sombra_menu: #c0c0c0;
 }
-:root.darkmode{
+
+:root.darkmode {
     color: #101010;
     --fundo: #e0e0c0;
     --cor_menu: #101010;
-    --sombra_menu: #303030}
-body{
+    --sombra_menu: #303030
+}
+
+body {
     margin: 0px;
     display: flex;
     justify-content: space-evenly;
@@ -27,130 +31,118 @@ body{
     width: 100%;
     background-color: var(--fundo);
 }
-h1{
-    border-bottom:0.125rem solid var(--cor_menu);
-    font-size: 5rem;
-    margin-bottom: 1rem;
+
+a {
+    color: var(--cor_menu);
+    text-decoration: none;
 }
-.coluna1{
+
+.coluna1 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    height: 90%;
     width: 20%;
-    border: 1px solid var(--cor_menu);
 }
-.coluna2{
-    display: flex;
-    flex-direction: column;
-    justify-content:start;
-    width: 70%;
-    height: 70%;
-}
-.horizontal{
-    position: fixed;
-    background-color: #f00;
-    width: 100vw;
-    height: 3vw;
-    top: 0;
-}
-.vertical{
-    position: fixed;
-    background-color: #f00;
-    width: 3vw;
-    height: 100vh;
-    left: 0;
-}
-.horizontal::after{
-    content: '';
-    position: fixed;
-    background-color: #f00;
-    width: 100vw;
-    height: 3vw;
-    bottom: 0;
-}
-.vertical::after{
-    content: '';
-    position:fixed;
-    background-color: #f00;
-    width: 3vw;
-    height: 100vh;
-    right: 0;
-}
-/*body::-webkit-scrollbar{
-    width: 0;
-    height: 0;
-}*/
-.foto_perfil{
-    height: 15rem;
+
+.foto_perfil {
+    height: 40%;
     border-radius: 50%;
     box-shadow: 0 0 0.5rem var(--sombra_menu);
 }
-.links, .menu, .menu a{
+
+/*.links = lista não ordenada
+.menu = itens da lista não ordenada*/
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 90%;
+    height: 40%;
+}
+
+.menu,
+.menu a {
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
+    max-width: 100%;
+    height: calc(100%/7);
 }
-.links{
-    width: 100%;
-    height: 17rem;
-    margin-top: 1.5em;
-    list-style: none;
+
+.menu .icon:not(.darkmode_btn) {
+    height: 1.5rem;
+    width: 1.5rem;
+    rotate: 0deg;
+    transition: 1s;
+}
+
+.menu:hover .icon:not(.darkmode_btn) {
+    height: 2rem;
+    width: 2rem;
+    filter: drop-shadow(0 0 1rem var(--sombra_menu));
+    transition: 1s;
+}
+
+.menu p {
+    margin-left: 0.25rem;
+    word-wrap: break-word;
+    max-width: calc(100% - 1.5rem);
+    font-size: 1.5em;
+    transition: 1s;
+}
+
+.menu:hover p {
+    font-size: 1.75rem;
+    max-width: calc(100% - 2rem);
+    filter: drop-shadow(0 0 1rem var(--sombra_menu));
+    transition: 1s;
+}
+
+.darkmode_btn {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    rotate: 180deg;
+    transition: 1s;
+}
+
+.coluna2 {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 0.5rem;
+    width: 70%;
+    height: 80%;
 }
-.menu{
-    width: auto;
-    height: 3rem;
-    align-items: center;
+
+.coluna2 .titulo {
+    padding-bottom: 0.5rem;
+    border-bottom: 0.125rem solid var(--cor_menu);
 }
-.menu:hover{
-    cursor:pointer;
-}
-.menu a{
-    align-items: center;
-}
-.menu .icon, .menu a, .menu p{
-    font-size: 2rem;
-    text-decoration: none;
-    color: var(--cor_menu);
-    transition: 1s;
-}
-.menu .icon{
-    width: 2rem;
-    height: 2rem;
-}
-.menu .email{
-    font-size: 1.25rem;
-}
-.menu .telefone{
-    font-size: 1.5rem;
-}
-.menu:hover .email{
-    font-size: 1.5rem;
-}
-.menu:hover .telefone{
-    font-size: 1.75rem;
-}
-.menu .darkmode_btn{
-    transform: rotate(180deg);
-    height: 0;
-    width: 0;
+
+.coluna2 h1 {
+    font-size: 4rem;
+    font-family: 'Times New Roman', Times, serif;
 
 }
-.menu:hover p{
-    font-size: 2.25rem;
-    text-shadow: 0 0 0.5rem var(--sombra_menu);
-    transition: 1s;
+
+.coluna2 .titulo h2 {
+    font-size: 1.375rem;
 }
-.menu:hover .icon:not(.darkmode_btn){
-    width: 2.25rem;
-    height: 2.25rem;
-    filter: drop-shadow(0 0 0.25rem var(--sombra_menu));
-    transition: 1s;
+
+.coluna2 ul {
+    list-style-type: none;
 }
-.coluna2 p{
-    height: 70%;
+
+.coluna2 ul li p:nth-child(2) {
+    margin: 0 0 1rem 2rem;
+}
+
+.coluna2 p {
+    height: auto;
     font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
 }
